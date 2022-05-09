@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600&display=swap');
+html, body{
+    margin: 0;
+}
+body{
+    position: relative;
+}
+body *{
+    font-family: 'Raleway', sans-serif;
+}
+/*Auth*/
+#authpage{
+    width: 100%;
+    height: 100%;
+    background: url('Images/tile_background.webp');
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.sidediv{
+    position: fixed;
+    background: white;
+    top: 0;
+    right: 0;
+    width: 40%;
+    min-width: 400px;
+    height: 100%;
+}
+#mlogo{
+    display: none;
+    width: calc(100% - 30px);
+    max-width: 500px;
+    margin: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.autha{
+    display: inline-block;
+    width: calc(50% - 60px);
+    height: auto;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 20px;
+    text-align: center;
+    background: rgba(0,0,0,0);
+    transition-duration: 0.2s;
+}
+input.email, input.password, input.submit{
+    display: block;
+    width: calc(100% - 60px);
+    outline-width: 0;
+    padding: 5px;
+    margin: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    background: rgba(0,0,0,0);
+    border: 2px solid #02293E;
+    border-radius: 25px;
+    box-sizing: content-box;
+    font-size: 1rem;
+}
+#errorcodeauth{
+    display: block;
+    width: calc(100% - 60px);
+    outline-width: 0;
+    padding: 5px;
+    margin: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    background: rgba(0,0,0,0);
+    color: #ff7a19;
+}
+.signinicons{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+.signinicons img{
+    width: 30px;
+    display: inline-block;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+#prdiv{
+    width: calc(100% - 25px);
+    text-align: right;
+    padding-right: 25px;
+    display: none;
+}
+#passwordreset{
+    display: inline-block;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.centeralign{
+    position: absolute;
+    top: calc(50% + 30px);
+    transform: translateY(-50%);
+    width: 100%;
+    height: auto;
+}
+.sidelogo{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background: #02293E;
+    width: 30%;
+    min-width: 340px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.sidelogo img{
+    width: calc(100% - 40px);
+    padding: 20px;
+}
+/*Homepage*/
+#mainpage, #uploadpage, #mynotespage, #aboutpage, #profilepage{
+    display: none;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: calc(100% - 40px);
+    height: calc(100% - 80px);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 80px;
+}
+#mainpage{
+    padding-bottom: 20px;
+}
+#nonsearch{
+    width: 100%;
+    margin: 0;
+}
+#noteslist{
+    width: 100%;
+    margin: 0;
+    display: none;
+}
+#recentslist{
+    width: 100%;
+    margin: 0;
+}
+.note{
+    width: calc(100% - 40px);
+    max-width: 400px;
+    display: inline-block;
+    background: rgba(0,0,0,0);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border: 2px solid #02293E;
+    transition-duration: 0.4s;
+    position: relative;
+}
+.note .deletenote{
+    width: 20px;
+    position:absolute;
+    top: 33px;
+    right: 15px;
+}
+.note h2{
+    width: calc(100% - 40px);
+}
+div.note.ondisplay{
+    max-width: 100%;
+}
+.showingnotes{
+    width: 100%;
+    height: 50vh;
+    display: none;
+    border-radius: 15px;
+}
+.note .right{
+    text-align: right;
+}
+#searchholder{
+    height: calc(1rem + 40px);
+    position: relative;
+}
+#searchholder .closer{
+    position: absolute;
+    font-size: 2rem;
+    top:0px;
+    right: 20px;
+    display: none;
+}
+#searchbar{
+    width: calc(100% - 40px);
+    max-width: 200px;
+    display: block;
+    background: rgba(0,0,0,0);
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: 2px solid #02293E;
+    transition-duration: 0.4s;
+    font-size: 1rem;
+    float: right;
+}
+#hnavbar{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    height: auto;
+    width: calc(100% - 30px);
+    background: #02293E;
+    color: white;
+    z-index: 3;
+}
+#hnavbar *{
+    vertical-align: middle;
+    margin-right: 10px;
+}
+#hnavbar a{
+    display: inline-block;
+    font-size: 1rem;
+    padding: 10px;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-top: 5px;
+    border-radius: 20px;
+}
+#hnavbar img{
+    display: inline-block;
+    height: 40px;
+}
+#hnavbar #upload{
+    float: right;
+}
+#hnavbar #hamburger{
+    font-size: 1.3rem;
+    margin: 0;
+}
+#sidebarcontainer{
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index:4;
+    transition-duration: 0.3s;
+}
+#sidebar{
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    height: calc(100% - 40px);
+    padding: 0px;
+    width: 0;
+    overflow: hidden;
+    background: #02293E;
+    transition-duration: 0.3s;
+}
+#sidebar a{
+    color: white;
+    display: block;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition-duration: 0.4s;
+}
+#sidebar .userphoto{
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    border-radius: 50%;
+}
+#sidebar .username{
+    width: 230px;
+    height: 1rem;
+    display: inline-block;
+    color: white;
+    margin: 0;
+    margin-left: 15px;
+    margin-right: 10px;
+    vertical-align: top;
+    padding-top: calc(22.5px - 0.5rem);
+    padding-bottom: calc(22.5px - 0.5rem);
+}
+#sidebar a.closer{
+    font-size: 2rem;
+    padding: 5px;
+    text-align: right;
+    margin: 0;
+    margin-bottom: 20px;
+}
+#dmtoggle{
+    width: 40px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    transition-duration: 0.4s;
+}
+/*Uploads*/
+.file-upload{
+    display: block;
+    width: calc(100% - 60px);
+    padding: 5px;
+    margin: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    background: rgba(0,0,0,0);
+    border: 2px solid #02293E;
+    border-radius: 25px;
+    box-sizing: content-box;
+    font-size: 1rem; 
+    text-align: center;   
+}
+input[type="file"] {
+    display: none;
+}
+select{
+    display: block;
+    width: calc(100% - 60px);
+    padding: 5px;
+    margin: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    background: rgba(0,0,0,0);
+    border: 2px solid #02293E;
+    border-radius: 25px;
+    box-sizing: content-box;
+    font-size: 1rem;    
+}
+.uploadp{
+    margin-left: 25px;
+    margin-right: 25px;
+}
+#uploadform{
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#errorcodeupload, #errorcodecpw{
+    color:#ff7a19;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+/*mynotespage*/
+#usernotelist{
+    width: 100%;
+    margin: 0;
+}
+
+/*Pop-Ups*/
+#popupbg{
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    transition-duration: 0.4s;
+}
+#popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: white;
+    width: 50%;
+    height: auto;
+    z-index: 2;
+    border-radius: 10px;
+}
+#popup h1{
+    font-size: 1.5rem; 
+    font-weight: 700;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+#close{
+    position: absolute;
+    top: 0%;
+    right: 2%;
+    font-size: 2rem;
+}
+
+/*Profile*/
+#profiles{
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#profiles .userphoto{
+    width: 80px;
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 50%;
+}
+#profiles .username{
+    display: inline-block;
+    margin: 0;
+    margin-top: 20px;
+    padding-top: calc(40px - 1rem);
+    padding-left: 15px;
+    vertical-align: top;
+}
+.profbutton{
+    width: calc(100% - 60px);
+    outline-width: 0;
+    padding: 5px;
+    margin: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+    background: rgba(0,0,0,0);
+    border: 2px solid #02293E;
+    border-radius: 25px;
+    box-sizing: content-box;
+    text-align: center;
+}
+
+/*Others*/
+.highlight{
+    background: #ff7a19;
+    color: white;
+}
+
+/*States*/
+.submit:hover, .autha:hover, #profpg:hover, .profbutton:hover, .signinicons img:hover, .deletenote:hover, #passwordreset:hover, #close:hover, #hnavbar *:hover,.file-upload:hover, .note:hover, .note *:hover, #sidebar a:hover, .closer:hover, #dmtoggle:hover{
+    cursor:pointer;
+}
+#sidebar a:hover{
+    background: #ff7a19;
+    color: white;
+}
+#sidebar a.closer:hover{
+    background: rgba(0,0,0,0);
+}
+
+/*Scrollbar*/
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0);
+}
+::-webkit-scrollbar-thumb {
+    background: #1e1e1e;
+}

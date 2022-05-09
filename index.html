@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="Images/favicon.png">
+        <title>noteXchange</title>
+    </head>
+    <body>
+        <div id="authpage">
+            <div class="sidelogo"><img src="Images/logo_white.webp"></div>
+            <div class="sidediv">
+                <a class="autha highlight" onclick="signuppage()">Sign Up</a><a class="autha" onclick="signinpage()">Log In</a>
+                <div class="centeralign">
+                    <img id="mlogo" src="Images/logo.webp">
+                <input type="text" placeholder="Email" class="email">
+                <input type="password" placeholder="Password" class="password">
+                <input type="submit" class="submit" value="Sign Up" id="su">
+                <div id="prdiv"><a id="passwordreset">Forgot Password?</a></div>
+                <p id="errorcodeauth"></p>
+                <div class="signinicons"><img src="/Images/google.webp" id="google"><img src="Images/facebook.webp" id="facebook"></div>
+                
+                </div>
+            </div>
+        </div>
+        <div id="popupbg"><div id="popup"></div></div>
+        <div id="hnavbar"><a id="hamburger" onclick="openside()">&#9776;</a><img src="Images/logo_white.webp" id="home"><a class="highlight" id="upload" onclick="loadsubjs()">Upload</a></div>
+        <div id="sidebarcontainer"><div id="sidebar">
+            <a onclick="closeside()" class="closer">&times;</a>
+            <span id="profpg"><img class="userphoto"><p class="username"></p></span>
+            <a id="aboutpg">About noteXchange</a>
+            <a id="usernotes">Your Notes</a>
+            <a class="highlight" id="logout">Log Out</a>
+            <img src="Images/sun.webp" id="dmtoggle">
+        </div></div>
+        <div id="mainpage">
+            <h1>Welcome, <span class="username"></span>!</h1>
+            <div id="searchholder">
+            <input type="text" id="searchbar" placeholder="Search">
+            <a class="closer" onclick="endsearch()">&times;</a>
+            </div>
+            <div id='nonsearch'>
+            <h2>Recent Uploads</h2>
+            <div id="recentslist"></div>
+            </div>
+            <div id="noteslist"></div>
+        </div>
+        <div id="uploadpage">
+            <h1>Upload Notes</h1>
+            <h2>Contribute to the Community!</h2>
+            <div id="uploadform">
+            <label class="file-upload">
+                <input id="notesupload" type="file" accept='.pdf,.doc,.docx'>
+                <span id="filename">Select Notes</span>
+            </label>
+            <p class="uploadp">Subject: </p>
+            <select id="upsubject">
+                <option value="" disabled selected>Select</option>
+            </select>
+            <p class="uploadp">Level: </p>
+            <select id="uplevel">
+                <option value="" disabled selected>Select</option>
+            </select>
+            <input type="submit" class="submit" value="Upload" id="nup">
+            <p id="errorcodeupload"></p>
+            </div>
+        </div>
+        <div id="mynotespage">
+            <h1>Your Notes</h1>
+            <div id="usernotelist">
+
+            </div>
+        </div>
+        <div id="aboutpage">
+            <h1>About noteXchange</h1>
+            <p>noteXchange is a free to use, note sharing platform! Share your notes, and get access to notes from others!</p>
+            <p>noteXchange was built with HTML, CSS and Vanilla JS. Vanilla JS was tidied up with Webpack. Cloud and Database functions are provided by Firebase. noteXchange is hosted by Netlify.</p>
+            <h2>Disclaimer</h2>
+            <p>By uploading content on noteXchange, you are declaring that there is no copyrighted content or illegal content present. Any legal dispute related to copyrighted or illegal content found will be attributed to the user who uploaded it, and not the platform.</p>
+        </div>
+        <div id="profilepage">
+            <div id="profiles">
+            <img class="userphoto">
+            <h1 class="username"></h1>
+            <p><span class="number"></span> Notes Uploaded</p>
+            <p id="changepw" class="profbutton">Change Password</p>
+            <p id="logout" class="profbutton">Log Out</p>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="script.js"></script>
+    <script src="dist/main.js"></script>
+    <!--<script src="src/local.js" type="module"></script>-->
+</html>
